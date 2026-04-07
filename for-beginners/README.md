@@ -10,7 +10,7 @@ each file, and you'll have a solid mental model of how Claude Code works.
 
 ## Prerequisites
 
-- [Claude Code installed](https://docs.anthropic.com/en/claude-code)
+- [Claude Code installed](https://code.claude.com/docs)
 - Navigate to this directory in your terminal, then run `claude` to start a session
 
 ---

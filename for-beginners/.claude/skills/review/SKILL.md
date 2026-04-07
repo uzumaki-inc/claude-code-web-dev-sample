@@ -57,7 +57,7 @@ Determine what to review:
 - Otherwise, run `git diff HEAD` to find recently changed files and review those
 - If there is no git history, ask the user which files to review
 
-Apply the review criteria defined in `general-review-instructions.md`.
+Apply the review criteria defined in [general-review-instructions.md](general-review-instructions.md).
 
 Fix any issues you find directly in the files. After fixing, give a brief summary:
 - How many issues were found

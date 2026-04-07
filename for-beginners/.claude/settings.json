@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '\\n💡 File modified. Run /review to check your changes.\\n'"
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"File modified. Remind the user they can run /review to check the changes.\"}}'"
           }
         ]
       }

@@ -1,3 +1,8 @@
+---
+description: Explain what a file or function does in plain English
+argument-hint: [file path or function name]
+---
+
 # /explain
 
 <!--
@@ -16,6 +21,10 @@
   no supporting reference files needed, no reason for Claude to auto-trigger it.
   A single .md file is exactly the right amount of structure.
 
+  FRONTMATTER FIELDS USED ABOVE:
+  - description: Shown in the / menu so users know what the command does.
+  - argument-hint: Shown during autocomplete to remind users what to type after /explain.
+
   COMPARE WITH THE SKILL:
   Open .claude/skills/review/SKILL.md to see how a skill differs:
   - It lives in a directory (not a single file)
@@ -30,22 +39,27 @@
     /explain README.md
     /explain the getUserById function
     /explain .claude/skills/review/SKILL.md
+
+  NOTE ON $ARGUMENTS:
+  The placeholder $ARGUMENTS below is replaced with whatever the user types
+  after /explain. So `/explain README.md` results in the prompt receiving
+  "README.md" in place of $ARGUMENTS.
 -->
 
-Explain what the specified file or function does in plain English.
+The user has asked you to explain the following: **$ARGUMENTS**
 
-If the user provided a file path:
+If they provided a file path:
 - Read the file
 - Explain its purpose in one or two sentences
 - Describe the key sections, functions, or logic
 - Explain how it fits into the overall project if that's apparent
 
-If the user provided a function or class name:
+If they provided a function or class name:
 - Find it in the codebase
 - Explain what it does, what it takes as input, and what it returns
 - Note any non-obvious behaviors or side effects
 
-If nothing specific was provided, ask: "What would you like me to explain? You can give me a file path or a function name."
+If $ARGUMENTS is empty or unclear, ask: "What would you like me to explain? You can give me a file path or a function name."
 
 Keep the explanation clear and accessible. Assume the reader understands programming
 but is unfamiliar with this specific code.
