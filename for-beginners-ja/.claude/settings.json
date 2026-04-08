@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"ファイルが変更されました。/review を実行して変更を確認するようユーザーに促してください。\"}}'"
+          }
+        ]
+      }
+    ]
+  }
+}
