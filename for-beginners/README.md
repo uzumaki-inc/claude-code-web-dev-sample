@@ -12,6 +12,18 @@ each file, and you'll have a solid mental model of how Claude Code works.
 
 - [Claude Code installed](https://code.claude.com/docs)
 - Navigate to this directory in your terminal, then run `claude` to start a session
+- A small piece of sample code to review and explain. If you don't have anything handy,
+  the quickest path is to ask Claude to create one. For example:
+  ```
+  Create a tictactoe.js file
+  ```
+  or
+  ```
+  Create a blackjack.rb file
+  ```
+  The `/code-review` skill is designed for source code, so pick a real program rather
+  than a documentation file (e.g. a README.md file) — that's what makes the four
+  building blocks click.
 
 ---
 
