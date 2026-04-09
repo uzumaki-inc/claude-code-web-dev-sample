@@ -63,3 +63,5 @@ If $ARGUMENTS is empty or unclear, ask: "What would you like me to explain? You 
 
 Keep the explanation clear and accessible. Assume the reader understands programming
 but is unfamiliar with this specific code.
+
+Provide all explanations in **English**.
