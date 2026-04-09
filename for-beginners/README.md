@@ -127,7 +127,9 @@ Here's how the four components work together:
 7. Both sets of fixes are applied. Review complete.
 ```
 
-At any point, you can also run `/explain <file>` to get a plain-English explanation of any file.
+## If you get stuck
+
+At any point, you can run `/explain <file>` to get a plain-English explanation of any file.
 
 ---
 
