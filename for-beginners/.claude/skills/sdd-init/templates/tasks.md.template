@@ -1,0 +1,12 @@
+# Tasks
+
+An ordered checklist for implementing the MVP. Each task should be small enough
+to verify on its own.
+
+{{TASKS_AS_NUMBERED_CHECKLIST}}
+
+## Definition of done
+
+- All tasks above are checked off
+- The app runs end-to-end (see `CLAUDE.md` for how to run it)
+- A `/code-review` pass has been completed and any blocking issues addressed
