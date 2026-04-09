@@ -108,9 +108,9 @@ edits a file.
 
 ---
 
-## Test 2: Command — `/explain`
+## Test 2: Slash Command — `/explain`
 
-**Goal:** Verify the `/explain` command runs as a manually-triggered prompt and
+**Goal:** Verify the `/explain` slash command runs as a manually-triggered prompt and
 behaves as documented in three different scenarios.
 
 ### Test 2a — Explain a file by path
@@ -130,7 +130,7 @@ clear sentences. The explanation should describe the `console.log` statement.
 /explain .claude/commands/explain.md
 ```
 
-**Pass criteria:** Claude reads its own command file and explains its purpose
+**Pass criteria:** Claude reads its own slash command file and explains its purpose
 (it's a slash command that asks Claude to explain code).
 
 ### Test 2c — Explain with no argument
@@ -146,8 +146,8 @@ or producing a generic response.
 **Common failure modes:**
 
 - *`/explain` is not recognized:* Confirm `.claude/commands/explain.md` exists.
-  Try restarting Claude Code so it picks up the command.
-- *Claude doesn't read the file before explaining:* The command may have been
+  Try restarting Claude Code so it picks up the slash command.
+- *Claude doesn't read the file before explaining:* The slash command may have been
   invoked in a different working directory. Make sure `hello.js` exists relative
   to your current directory.
 
@@ -334,7 +334,7 @@ deploy it anywhere. Delete it during cleanup.
 
 ## Test 7: Full end-to-end pipeline
 
-**Goal:** Verify all four components — hook, command, skill, and subagent —
+**Goal:** Verify all four components — hook, slash command, skill, and subagent —
 work together as documented.
 
 **Setup:** Start a **fresh Claude Code session**.
@@ -373,7 +373,7 @@ work together as documented.
    ```
    /explain app.js
    ```
-   to confirm the command still works after the review.
+   to confirm the slash command still works after the review.
 
 **Pass criteria:**
 
@@ -437,9 +437,9 @@ Use this to track which tests pass:
 | # | Component | Test | Pass? | Notes |
 |---|-----------|------|-------|-------|
 | 1 | Hook | Fires after Write/Edit | | |
-| 2a | Command | `/explain <file>` | | |
-| 2b | Command | `/explain <project file>` | | |
-| 2c | Command | `/explain` with no arg | | |
+| 2a | Slash Command | `/explain <file>` | | |
+| 2b | Slash Command | `/explain <project file>` | | |
+| 2c | Slash Command | `/explain` with no arg | | |
 | 3 | Skill | `/review` step-by-step with checkpoint | | |
 | 4 | Skill | `/review` auto without checkpoint | | |
 | 5 | Skill | Auto-triggering without `/review` | | |
@@ -453,7 +453,7 @@ Use this to track which tests pass:
 You don't need every test to pass perfectly for the project to be useful. The
 important things to confirm are:
 
-1. **The command always works** (Test 2) — this is the most reliable building block
+1. **The slash command always works** (Test 2) — this is the most reliable building block
 2. **The skill always works when invoked manually** (Tests 3 and 4) — it should
    never silently fail when you type `/review`
 3. **The subagent works when invoked directly** (Test 6) — even if auto-delegation

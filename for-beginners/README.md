@@ -1,7 +1,7 @@
 # Claude Code — For Beginners
 
 This directory is a hands-on introduction to the four core building blocks of Claude Code:
-**commands**, **skills**, **hooks**, and **subagents**.
+**slash commands**, **skills**, **hooks**, and **subagents**.
 
 Each one is demonstrated through a code review theme. Try them out, read the comments inside
 each file, and you'll have a solid mental model of how Claude Code works.
@@ -17,11 +17,11 @@ each file, and you'll have a solid mental model of how Claude Code works.
 
 ## The Four Building Blocks
 
-### 1. Command — `/explain`
+### 1. Slash Command — `/explain`
 **File:** `.claude/commands/explain.md`
 
-A command is the simplest building block: a single `.md` file that becomes a reusable prompt.
-Commands are **always triggered manually** by you — Claude will never invoke one on its own.
+A slash command is the simplest building block: a single `.md` file that becomes a reusable prompt.
+Slash commands are **always triggered manually** by you — Claude will never invoke one on its own.
 
 **Try it:**
 ```
@@ -42,7 +42,7 @@ or
 ### 2. Skill — `/review`
 **Files:** `.claude/skills/review/SKILL.md` + `general-review-instructions.md`
 
-A skill looks similar to a command from the outside (you invoke it with `/review`), but it's
+A skill looks similar to a slash command from the outside (you invoke it with `/review`), but it's
 more powerful under the hood. Skills live in a **directory** and can have supporting files.
 They can also be **auto-triggered** by Claude when it determines one is relevant.
 
@@ -54,7 +54,7 @@ They can also be **auto-triggered** by Claude when it determines one is relevant
 When prompted, try it once with `auto` and once with `step-by-step` to see how the pipeline
 behaves differently.
 
-**Key differences from a command:**
+**Key differences from a slash command:**
 - Directory structure (not a single file)
 - Can include supporting context files (see `general-review-instructions.md`)
 - Can be auto-triggered by Claude (controlled by `disable-model-invocation` in the frontmatter)
@@ -139,7 +139,7 @@ for-beginners/
 └── .claude/
     ├── settings.json                           ← hook configuration
     ├── commands/
-    │   └── explain.md                          ← /explain command
+    │   └── explain.md                          ← /explain slash command
     ├── skills/
     │   └── review/
     │       ├── SKILL.md                        ← /review skill (main entry point)

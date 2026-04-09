@@ -12,7 +12,7 @@
   Claude reads this file when SKILL.md references it. You can add as many
   supporting files as you need: examples, templates, checklists, scripts, etc.
 
-  A command (.claude/commands/explain.md) cannot do this — it's one file only.
+  A slash command (.claude/commands/explain.md) cannot do this — it's one file only.
 -->
 
 When performing a general code review, evaluate the code across these categories:

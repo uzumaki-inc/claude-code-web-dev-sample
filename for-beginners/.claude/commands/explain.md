@@ -7,12 +7,12 @@ argument-hint: [file path or function name]
 
 <!--
   WHAT IS THIS FILE?
-  This is a Claude Code COMMAND — the simplest building block in Claude Code.
-  A command is just a single .md file that becomes a reusable prompt.
+  This is a Claude Code SLASH COMMAND — the simplest building block in Claude Code.
+  A slash command is just a single .md file that becomes a reusable prompt.
   When you type /explain, the content below is sent to Claude as your prompt.
 
-  WHY A COMMAND AND NOT A SKILL?
-  Commands are the right choice when your task is:
+  WHY A SLASH COMMAND AND NOT A SKILL?
+  Slash commands are the right choice when your task is:
   - Simple and focused (one prompt, one output)
   - Always manually triggered — you decide when to run it
   - Self-contained (no need for supporting files or orchestration)
@@ -22,7 +22,7 @@ argument-hint: [file path or function name]
   A single .md file is exactly the right amount of structure.
 
   FRONTMATTER FIELDS USED ABOVE:
-  - description: Shown in the / menu so users know what the command does.
+  - description: Shown in the / menu so users know what the slash command does.
   - argument-hint: Shown during autocomplete to remind users what to type after /explain.
 
   COMPARE WITH THE SKILL:
@@ -32,7 +32,7 @@ argument-hint: [file path or function name]
   - It can be auto-triggered by Claude
   - It orchestrates a multi-step workflow including a subagent
 
-  HOW TO USE THIS COMMAND:
+  HOW TO USE THIS SLASH COMMAND:
   /explain <file path or function name>
 
   Examples:

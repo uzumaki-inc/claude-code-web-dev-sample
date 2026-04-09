@@ -7,12 +7,12 @@ disable-model-invocation: false
 <!--
   WHAT IS THIS FILE?
   This is the main entry point for a Claude Code SKILL.
-  Skills are invoked with /review, just like a command — but they're more powerful.
+  Skills are invoked with /review, just like a slash command — but they're more powerful.
 
-  HOW THIS SKILL DIFFERS FROM THE /explain COMMAND:
+  HOW THIS SKILL DIFFERS FROM THE /explain SLASH COMMAND:
 
   1. DIRECTORY STRUCTURE
-     Commands are a single .md file. Skills live in a directory.
+     Slash commands are a single .md file. Skills live in a directory.
      This skill has a supporting file: general-review-instructions.md
      That file contains detailed review criteria, keeping this file focused
      on orchestration rather than getting cluttered with reference content.
@@ -27,8 +27,8 @@ disable-model-invocation: false
 
   3. ORCHESTRATION
      This skill coordinates multiple steps and launches a subagent.
-     A single command .md file would be too limited for this kind of workflow.
-     Commands do one thing. Skills can do many things in sequence.
+     A single slash command .md file would be too limited for this kind of workflow.
+     Slash commands do one thing. Skills can do many things in sequence.
 
   HOW TO USE:
   Type /review and follow the prompts.
