@@ -26,7 +26,7 @@ argument-hint: [file path or function name]
   - argument-hint: Shown during autocomplete to remind users what to type after /explain.
 
   COMPARE WITH THE SKILL:
-  Open .claude/skills/review/SKILL.md to see how a skill differs:
+  Open .claude/skills/code-review/SKILL.md to see how a skill differs:
   - It lives in a directory (not a single file)
   - It has a supporting file (general-review-instructions.md)
   - It can be auto-triggered by Claude
@@ -38,7 +38,7 @@ argument-hint: [file path or function name]
   Examples:
     /explain README.md
     /explain the getUserById function
-    /explain .claude/skills/review/SKILL.md
+    /explain .claude/skills/code-review/SKILL.md
 
   NOTE ON $ARGUMENTS:
   The placeholder $ARGUMENTS below is replaced with whatever the user types

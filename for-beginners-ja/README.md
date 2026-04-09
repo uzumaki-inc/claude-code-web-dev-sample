@@ -39,16 +39,16 @@
 
 ---
 
-### 2. スキル (Skill) — `/review`
-**ファイル:** `.claude/skills/review/SKILL.md` + `general-review-instructions.md`
+### 2. スキル (Skill) — `/code-review`
+**ファイル:** `.claude/skills/code-review/SKILL.md` + `general-review-instructions.md`
 
-スキルは外見上はスラッシュコマンドと似ていますが(`/review` と入力して呼び出せる)、内部的にはより
+スキルは外見上はスラッシュコマンドと似ていますが(`/code-review` と入力して呼び出せる)、内部的にはより
 強力です。スキルは**ディレクトリ**内に存在し、補助ファイルを持つことができます。
 さらに、Claudeが関連性を判断したときに**自動でトリガー**されることもあります。
 
 **試してみる:**
 ```
-/review
+/code-review
 ```
 
 プロンプトが表示されたら、`auto`(自動)と `step-by-step`(ステップごと)の両方で試して、
@@ -68,7 +68,7 @@
 サブエージェントは、メインの会話から**隔離された**状態で動作する独立したClaudeインスタンスです。
 独自の集中した指示を持ち、あなたとの会話履歴を引き継ぎません。
 
-`security-reviewer` エージェントは `/review` スキルのステップ3で自動的に起動されます。
+`security-reviewer` エージェントは `/code-review` スキルのステップ3で自動的に起動されます。
 直接呼び出すこともできます:
 
 ```
@@ -115,9 +115,9 @@ Claudeがファイルを書いた後、フックが自動で発火します。
 ```
 1. Claudeにコードを書くように依頼する
         ↓
-2. フックが発火 → /review の実行を促す
+2. フックが発火 → /code-review の実行を促す
         ↓
-3. /review (スキル) を実行
+3. /code-review (スキル) を実行
         ↓
 4. スキルが質問: auto か step-by-step か?
         ↓
@@ -142,8 +142,8 @@ for-beginners-ja/
     ├── commands/
     │   └── explain.md                          ← /explain スラッシュコマンド
     ├── skills/
-    │   └── review/
-    │       ├── SKILL.md                        ← /review スキル(エントリーポイント)
+    │   └── code-review/
+    │       ├── SKILL.md                        ← /code-review スキル(エントリーポイント)
     │       └── general-review-instructions.md  ← スキルの補助コンテキスト
     └── agents/
         └── security-reviewer.md               ← セキュリティレビューのサブエージェント

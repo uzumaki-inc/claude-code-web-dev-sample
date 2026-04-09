@@ -26,7 +26,7 @@ argument-hint: [ファイルパス または 関数名]
   - argument-hint: 入力補完中に表示され、/explain の後に何を入力するか思い出せます。
 
   スキルとの比較:
-  .claude/skills/review/SKILL.md を開いて、スキルがどう違うか確認してみてください:
+  .claude/skills/code-review/SKILL.md を開いて、スキルがどう違うか確認してみてください:
   - ディレクトリに存在する(単一ファイルではない)
   - 補助ファイルを持つ(general-review-instructions.md)
   - Claudeによって自動でトリガーされる可能性がある
@@ -38,7 +38,7 @@ argument-hint: [ファイルパス または 関数名]
   例:
     /explain README.md
     /explain getUserById 関数
-    /explain .claude/skills/review/SKILL.md
+    /explain .claude/skills/code-review/SKILL.md
 
   $ARGUMENTS について:
   以下のプレースホルダー $ARGUMENTS は、ユーザーが /explain の後に入力した内容に

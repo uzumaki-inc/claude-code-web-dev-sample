@@ -2,7 +2,7 @@
 
 <!--
   WHAT IS THIS FILE?
-  This is a SUPPORTING FILE for the /review skill.
+  This is a SUPPORTING FILE for the /code-review skill.
 
   It exists to demonstrate one of the key advantages of skills over commands:
   skills can include multiple files in their directory. This lets you separate

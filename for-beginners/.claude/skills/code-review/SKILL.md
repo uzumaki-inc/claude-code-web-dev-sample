@@ -1,5 +1,5 @@
 ---
-name: review
+name: code-review
 description: Reviews code for quality and security issues. Use this when the user wants to review code, check for bugs, improve code quality, or audit for security vulnerabilities.
 disable-model-invocation: false
 ---
@@ -7,7 +7,7 @@ disable-model-invocation: false
 <!--
   WHAT IS THIS FILE?
   This is the main entry point for a Claude Code SKILL.
-  Skills are invoked with /review, just like a slash command — but they're more powerful.
+  Skills are invoked with /code-review, just like a slash command — but they're more powerful.
 
   HOW THIS SKILL DIFFERS FROM THE /explain SLASH COMMAND:
 
@@ -21,7 +21,7 @@ disable-model-invocation: false
   2. AUTO-TRIGGERING
      See the frontmatter above: `disable-model-invocation: false`
      This means Claude can invoke this skill automatically if it determines
-     a code review is needed — even if you didn't type /review.
+     a code review is needed — even if you didn't type /code-review.
      Claude uses the `description` field above to decide when it's relevant.
      Try changing it to `true` and see how the behavior changes.
 
@@ -31,7 +31,7 @@ disable-model-invocation: false
      Slash commands do one thing. Skills can do many things in sequence.
 
   HOW TO USE:
-  Type /review and follow the prompts.
+  Type /code-review and follow the prompts.
   Try it once with "auto" and once with "step-by-step" to see the difference.
 -->
 

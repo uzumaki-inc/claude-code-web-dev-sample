@@ -39,16 +39,16 @@ or
 
 ---
 
-### 2. Skill — `/review`
-**Files:** `.claude/skills/review/SKILL.md` + `general-review-instructions.md`
+### 2. Skill — `/code-review`
+**Files:** `.claude/skills/code-review/SKILL.md` + `general-review-instructions.md`
 
-A skill looks similar to a slash command from the outside (you invoke it with `/review`), but it's
+A skill looks similar to a slash command from the outside (you invoke it with `/code-review`), but it's
 more powerful under the hood. Skills live in a **directory** and can have supporting files.
 They can also be **auto-triggered** by Claude when it determines one is relevant.
 
 **Try it:**
 ```
-/review
+/code-review
 ```
 
 When prompted, try it once with `auto` and once with `step-by-step` to see how the pipeline
@@ -68,7 +68,7 @@ behaves differently.
 A subagent is a separate Claude instance that runs in **isolation** from your main conversation.
 It has its own focused instructions and doesn't inherit your conversation history.
 
-The `security-reviewer` agent is launched automatically by the `/review` skill during Step 3
+The `security-reviewer` agent is launched automatically by the `/code-review` skill during Step 3
 of the review pipeline. You can also invoke it directly:
 
 ```
@@ -114,9 +114,9 @@ Here's how the four components work together:
 ```
 1. You ask Claude to write some code
         ↓
-2. Hook fires → reminds you to run /review
+2. Hook fires → reminds you to run /code-review
         ↓
-3. You run /review (skill)
+3. You run /code-review (skill)
         ↓
 4. Skill asks: auto or step-by-step?
         ↓
@@ -141,8 +141,8 @@ for-beginners/
     ├── commands/
     │   └── explain.md                          ← /explain slash command
     ├── skills/
-    │   └── review/
-    │       ├── SKILL.md                        ← /review skill (main entry point)
+    │   └── code-review/
+    │       ├── SKILL.md                        ← /code-review skill (main entry point)
     │       └── general-review-instructions.md  ← supporting context for the skill
     └── agents/
         └── security-reviewer.md               ← security review subagent

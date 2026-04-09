@@ -8,7 +8,7 @@ description: A specialized agent that reviews code for security vulnerabilities 
   This is a Claude Code SUBAGENT definition.
 
   A subagent is a separate Claude instance that runs in ISOLATION from the main
-  conversation. When the /review skill launches this agent via the Agent tool,
+  conversation. When the /code-review skill launches this agent via the Agent tool,
   it starts fresh — it does not see your conversation history, your previous
   messages, or the general review results. It only knows what it's explicitly told.
 
@@ -24,7 +24,7 @@ description: A specialized agent that reviews code for security vulnerabilities 
      which keeps the main conversation clean and responsive.
 
   3. REUSABILITY: Because it's self-contained, this agent can be invoked from
-     anywhere — by the /review skill, by another skill, or directly by the user.
+     anywhere — by the /code-review skill, by another skill, or directly by the user.
 
   WHEN TO USE A SUBAGENT VS. HANDLING SOMETHING IN THE MAIN SESSION:
   Use a subagent when the task:
@@ -33,7 +33,7 @@ description: A specialized agent that reviews code for security vulnerabilities 
   - Is specialized enough to benefit from focused, isolated instructions
   - Could reasonably be reused from multiple places
 
-  HOW TO INVOKE DIRECTLY (without /review):
+  HOW TO INVOKE DIRECTLY (without /code-review):
   "Use the security-reviewer agent to check auth.js for vulnerabilities"
 -->
 

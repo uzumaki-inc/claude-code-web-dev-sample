@@ -21,8 +21,8 @@ directory, confirm that all of the following files exist:
 README.md
 .claude/settings.json
 .claude/commands/explain.md
-.claude/skills/review/SKILL.md
-.claude/skills/review/general-review-instructions.md
+.claude/skills/code-review/SKILL.md
+.claude/skills/code-review/general-review-instructions.md
 .claude/agents/security-reviewer.md
 ```
 
@@ -90,7 +90,7 @@ edits a file.
 
 **Pass criteria (any one of these is acceptable):**
 
-- A reminder message about `/review` appears directly in your terminal output, OR
+- A reminder message about `/code-review` appears directly in your terminal output, OR
 - Claude itself mentions the reminder in its next response (this happens when the
   hook surfaces context to Claude rather than to the terminal directly), OR
 - Toggling verbose mode (press `Ctrl+O`) reveals the hook output in the transcript
@@ -153,9 +153,9 @@ or producing a generic response.
 
 ---
 
-## Test 3: Skill — `/review` in step-by-step mode
+## Test 3: Skill — `/code-review` in step-by-step mode
 
-**Goal:** Verify the `/review` skill orchestrates a multi-phase pipeline and pauses
+**Goal:** Verify the `/code-review` skill orchestrates a multi-phase pipeline and pauses
 for approval between phases.
 
 **Setup:** `hello.js` should still exist from Test 1. If it doesn't, recreate it.
@@ -164,7 +164,7 @@ for approval between phases.
 
 1. Run:
    ```
-   /review
+   /code-review
    ```
 
 2. When Claude asks "auto or step-by-step?", reply:
@@ -204,7 +204,7 @@ for approval between phases.
 
 ---
 
-## Test 4: Skill — `/review` in auto mode
+## Test 4: Skill — `/code-review` in auto mode
 
 **Goal:** Verify the same pipeline runs without checkpoints when the user picks auto.
 
@@ -217,7 +217,7 @@ Add a comment to hello.js explaining what it does
 
 1. Run:
    ```
-   /review
+   /code-review
    ```
 
 2. When asked, reply:
@@ -238,9 +238,9 @@ Add a comment to hello.js explaining what it does
 
 ---
 
-## Test 5: Skill auto-triggering (without `/review`)
+## Test 5: Skill auto-triggering (without `/code-review`)
 
-**Goal:** Verify Claude can auto-invoke the `/review` skill when its description
+**Goal:** Verify Claude can auto-invoke the `/code-review` skill when its description
 matches what the user asked for.
 
 > **Important caveat:** Auto-triggering depends on Claude's judgment, which is
@@ -268,9 +268,9 @@ Try these messages, one at a time, in separate fresh sessions:
 
 **Pass criteria:**
 
-- For at least one of the above prompts, Claude triggers the `/review` skill on its
+- For at least one of the above prompts, Claude triggers the `/code-review` skill on its
   own (you'll know because it asks "auto or step-by-step?" without you typing
-  `/review`)
+  `/code-review`)
 
 **Common failure modes:**
 
@@ -282,7 +282,7 @@ Try these messages, one at a time, in separate fresh sessions:
   other skills installed, this would be a surprise.
 
 **Optional comparison test:** Edit `SKILL.md` and change `disable-model-invocation`
-to `true`, then restart Claude Code. The skill should now only respond to `/review`
+to `true`, then restart Claude Code. The skill should now only respond to `/code-review`
 and never auto-trigger. (Remember to revert the change afterwards.)
 
 ---
@@ -354,7 +354,7 @@ work together as documented.
 
 3. Run:
    ```
-   /review
+   /code-review
    ```
 
 4. Choose `step-by-step`.
@@ -398,8 +398,8 @@ If you modified `SKILL.md` for the optional comparison test in Test 5, revert th
 change as well:
 
 ```
-git diff .claude/skills/review/SKILL.md
-git checkout .claude/skills/review/SKILL.md
+git diff .claude/skills/code-review/SKILL.md
+git checkout .claude/skills/code-review/SKILL.md
 ```
 
 (Skip the `git checkout` if you have other intentional changes you want to keep.)
@@ -440,9 +440,9 @@ Use this to track which tests pass:
 | 2a | Slash Command | `/explain <file>` | | |
 | 2b | Slash Command | `/explain <project file>` | | |
 | 2c | Slash Command | `/explain` with no arg | | |
-| 3 | Skill | `/review` step-by-step with checkpoint | | |
-| 4 | Skill | `/review` auto without checkpoint | | |
-| 5 | Skill | Auto-triggering without `/review` | | |
+| 3 | Skill | `/code-review` step-by-step with checkpoint | | |
+| 4 | Skill | `/code-review` auto without checkpoint | | |
+| 5 | Skill | Auto-triggering without `/code-review` | | |
 | 6 | Subagent | Direct invocation finds SQL injection | | |
 | 7 | All | End-to-end pipeline | | |
 
@@ -455,7 +455,7 @@ important things to confirm are:
 
 1. **The slash command always works** (Test 2) — this is the most reliable building block
 2. **The skill always works when invoked manually** (Tests 3 and 4) — it should
-   never silently fail when you type `/review`
+   never silently fail when you type `/code-review`
 3. **The subagent works when invoked directly** (Test 6) — even if auto-delegation
    from the skill is flaky, the subagent itself should be functional
 

@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"ファイルが変更されました。/review を実行して変更を確認するようユーザーに促してください。\"}}'"
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PostToolUse\",\"additionalContext\":\"ファイルが変更されました。/code-review を実行して変更を確認するようユーザーに促してください。\"}}'"
           }
         ]
       }

@@ -1,5 +1,5 @@
 ---
-name: review
+name: code-review
 description: コードの品質とセキュリティの問題をレビューします。ユーザーがコードレビュー、バグチェック、コード品質の改善、またはセキュリティ脆弱性の監査を求めているときに使用してください。
 disable-model-invocation: false
 ---
@@ -7,7 +7,7 @@ disable-model-invocation: false
 <!--
   このファイルは何?
   これはClaude Codeの「スキル (SKILL)」のメインエントリーポイントです。
-  スキルはスラッシュコマンドと同じく /review で呼び出せますが、より強力です。
+  スキルはスラッシュコマンドと同じく /code-review で呼び出せますが、より強力です。
 
   このスキルが /explain スラッシュコマンドとどう違うか:
 
@@ -20,7 +20,7 @@ disable-model-invocation: false
 
   2. 自動トリガー
      上記のフロントマターの `disable-model-invocation: false` に注目してください。
-     これは、Claudeがコードレビューが必要だと判断したときに、/review と入力しなくても
+     これは、Claudeがコードレビューが必要だと判断したときに、/code-review と入力しなくても
      このスキルを自動的に呼び出せることを意味します。
      Claudeは上の `description` フィールドを使って、関連性を判断します。
      試しに `true` に変更して、動作の違いを見てみてください。
@@ -31,7 +31,7 @@ disable-model-invocation: false
      スラッシュコマンドは1つのことをします。スキルは順番に多くのことをこなせます。
 
   使い方:
-  /review と入力して、表示されるプロンプトに従ってください。
+  /code-review と入力して、表示されるプロンプトに従ってください。
   「auto」と「step-by-step」の両方で試して、違いを確認してください。
 -->
 

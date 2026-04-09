@@ -21,8 +21,8 @@
 README.md
 .claude/settings.json
 .claude/commands/explain.md
-.claude/skills/review/SKILL.md
-.claude/skills/review/general-review-instructions.md
+.claude/skills/code-review/SKILL.md
+.claude/skills/code-review/general-review-instructions.md
 .claude/agents/security-reviewer.md
 ```
 
@@ -90,7 +90,7 @@ ls -R .claude
 
 **合格基準(以下のいずれか1つでも満たせば合格):**
 
-- `/review` についてのリマインダーメッセージがターミナル出力に直接表示される、または
+- `/code-review` についてのリマインダーメッセージがターミナル出力に直接表示される、または
 - Claudeが次の応答でリマインダーに言及する(これはフックがターミナルではなく
   Claudeにコンテキストを渡す場合に起きます)、または
 - 詳細モード(`Ctrl+O`)を切り替えると、トランスクリプト内にフックの出力が表示される
@@ -152,9 +152,9 @@ ls -R .claude
 
 ---
 
-## テスト3: スキル — `/review` の step-by-step モード
+## テスト3: スキル — `/code-review` の step-by-step モード
 
-**目的:** `/review` スキルが複数フェーズのパイプラインを統括し、フェーズ間で承認を待つことを確認。
+**目的:** `/code-review` スキルが複数フェーズのパイプラインを統括し、フェーズ間で承認を待つことを確認。
 
 **準備:** テスト1で作成した `hello.js` がまだ存在しているはず。なければ再作成してください。
 
@@ -162,7 +162,7 @@ ls -R .claude
 
 1. 実行:
    ```
-   /review
+   /code-review
    ```
 
 2. Claudeが「auto か step-by-step か?」と聞いたら、こう答えます:
@@ -201,7 +201,7 @@ ls -R .claude
 
 ---
 
-## テスト4: スキル — `/review` の auto モード
+## テスト4: スキル — `/code-review` の auto モード
 
 **目的:** ユーザーが auto を選んだとき、同じパイプラインがチェックポイントなしで実行されることを確認。
 
@@ -214,7 +214,7 @@ hello.jsに、何をしているか説明するコメントを追加してくだ
 
 1. 実行:
    ```
-   /review
+   /code-review
    ```
 
 2. 質問されたら、こう答えます:
@@ -235,9 +235,9 @@ hello.jsに、何をしているか説明するコメントを追加してくだ
 
 ---
 
-## テスト5: スキルの自動トリガー(`/review` を使わずに)
+## テスト5: スキルの自動トリガー(`/code-review` を使わずに)
 
-**目的:** ユーザーの依頼内容と説明文がマッチしたとき、Claudeが自動的に `/review` スキルを
+**目的:** ユーザーの依頼内容と説明文がマッチしたとき、Claudeが自動的に `/code-review` スキルを
 呼び出せることを確認。
 
 > **重要な注意:** 自動トリガーはClaudeの判断に依存しており、非決定的です。
@@ -265,8 +265,8 @@ hello.jsに、何をしているか説明するコメントを追加してくだ
 
 **合格基準:**
 
-- 上記のいずれかのプロンプトで、Claudeが自動的に `/review` スキルをトリガーする
-  (`/review` と入力していないのに「auto か step-by-step か?」と尋ねてくれば成功)
+- 上記のいずれかのプロンプトで、Claudeが自動的に `/code-review` スキルをトリガーする
+  (`/code-review` と入力していないのに「auto か step-by-step か?」と尋ねてくれば成功)
 
 **よくある失敗パターン:**
 
@@ -278,7 +278,7 @@ hello.jsに、何をしているか説明するコメントを追加してくだ
   インストールされていない場合、これは予想外です。
 
 **オプションの比較テスト:** `SKILL.md` を編集して `disable-model-invocation` を `true` に
-変更し、Claude Codeを再起動してください。スキルは `/review` にしか反応せず、自動トリガー
+変更し、Claude Codeを再起動してください。スキルは `/code-review` にしか反応せず、自動トリガー
 されなくなるはずです。(終わったら変更を元に戻すのを忘れずに。)
 
 ---
@@ -349,7 +349,7 @@ hello.jsに、何をしているか説明するコメントを追加してくだ
 
 3. 実行:
    ```
-   /review
+   /code-review
    ```
 
 4. `step-by-step` を選びます。
@@ -390,8 +390,8 @@ rm hello.js login.js app.js
 テスト5のオプションの比較テストで `SKILL.md` を変更した場合は、その変更も元に戻してください:
 
 ```
-git diff .claude/skills/review/SKILL.md
-git checkout .claude/skills/review/SKILL.md
+git diff .claude/skills/code-review/SKILL.md
+git checkout .claude/skills/code-review/SKILL.md
 ```
 
 (残しておきたい意図的な変更がある場合は `git checkout` をスキップしてください。)
@@ -433,9 +433,9 @@ git checkout .claude/skills/review/SKILL.md
 | 2a | スラッシュコマンド | `/explain <ファイル>` | | |
 | 2b | スラッシュコマンド | `/explain <プロジェクトファイル>` | | |
 | 2c | スラッシュコマンド | 引数なしの `/explain` | | |
-| 3 | スキル | step-by-step + チェックポイントで `/review` | | |
-| 4 | スキル | チェックポイントなしの auto モードで `/review` | | |
-| 5 | スキル | `/review` を使わない自動トリガー | | |
+| 3 | スキル | step-by-step + チェックポイントで `/code-review` | | |
+| 4 | スキル | チェックポイントなしの auto モードで `/code-review` | | |
+| 5 | スキル | `/code-review` を使わない自動トリガー | | |
 | 6 | サブエージェント | 直接呼び出しでSQLインジェクションを検出 | | |
 | 7 | 全部 | エンドツーエンドのパイプライン | | |
 
@@ -447,7 +447,7 @@ git checkout .claude/skills/review/SKILL.md
 確認すべき重要なことは:
 
 1. **スラッシュコマンドは常に動作する**(テスト2)— 最も信頼できる構成要素です
-2. **スキルは手動で呼び出したときには常に動作する**(テスト3、4)— `/review` と
+2. **スキルは手動で呼び出したときには常に動作する**(テスト3、4)— `/code-review` と
    入力したのに黙って失敗することはあってはなりません
 3. **サブエージェントは直接呼び出したときに動作する**(テスト6)— スキルからの自動委譲が
    不安定でも、サブエージェント自体は機能しているはずです
