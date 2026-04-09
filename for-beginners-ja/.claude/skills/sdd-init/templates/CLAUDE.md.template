@@ -1,0 +1,24 @@
+# {{PROJECT_NAME}}
+
+{{ONE_PARAGRAPH_GOAL}}
+
+## 技術スタック
+
+{{TECH_STACK}}
+
+## 実行方法
+
+{{HOW_TO_RUN}}
+
+## 注意事項
+
+- `docs/requirements.md` のスコープを守ること。ユーザーがスコープ外のことを
+  頼んだら、その旨を伝えつつ、勝手にプロジェクトを拡張しないこと。
+- 変更は小さく焦点を絞ること。初心者がこのコードを読んで学ぶことを意識する。
+- {{ADDITIONAL_GOTCHAS}}
+
+## 関連ドキュメント
+
+- [docs/requirements.md](docs/requirements.md) — 何をなぜ作るか
+- [docs/design.md](docs/design.md) — どう作るか
+- [docs/tasks.md](docs/tasks.md) — 実装ロードマップ
