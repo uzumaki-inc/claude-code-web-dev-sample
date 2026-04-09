@@ -23,7 +23,14 @@ disable-model-invocation: false
      This means Claude can invoke this skill automatically if it determines
      a code review is needed — even if you didn't type /code-review.
      Claude uses the `description` field above to decide when it's relevant.
-     Try changing it to `true` and see how the behavior changes.
+
+     Try it: with `false`, ask Claude something like "review the code in
+     tictactoe.js" without typing the slash command — Claude should pick up
+     this skill on its own. Then change the field to `true`, restart your
+     `claude` session so the new frontmatter is loaded, and ask the same
+     thing again. This time Claude won't auto-trigger the skill; you'll
+     have to invoke it explicitly with /code-review. Set it back to `false`
+     when you're done experimenting.
 
   3. ORCHESTRATION
      This skill coordinates multiple steps and launches a subagent.
