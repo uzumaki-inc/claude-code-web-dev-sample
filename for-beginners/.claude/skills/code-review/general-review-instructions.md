@@ -50,3 +50,15 @@ For each issue found:
 
 Keep fixes minimal — only change what needs to change. Do not refactor beyond
 what is necessary to resolve the identified issue.
+
+## Spec Compliance (only when SDD docs are present)
+
+<!--
+  This section only applies when /sdd-init was run and planning docs exist.
+  If no SDD docs were found, skip this section entirely.
+-->
+
+- Does the code implement every user-facing requirement from requirements.md?
+- Does the file layout and component structure match design.md?
+- Are all tasks in tasks.md completed in the code?
+- Flag any gaps between spec and implementation

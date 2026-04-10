@@ -53,11 +53,30 @@ Before doing anything else, ask the user:
 > "Would you like me to run the full review pipeline automatically, or pause for your
 > approval between steps? Reply with **auto** or **step-by-step**."
 
-Wait for their response. Store their choice — you'll need it in Step 2.
+Wait for their response. Store their choice — you'll need it in Step 3.
 
 ---
 
-## Step 2: General Code Review
+## Step 2: Load SDD context (if available)
+
+<!--
+  WHY THIS STEP?
+  If the user ran /sdd-init before building their app, there are planning docs
+  that describe what the code is *supposed* to do. By loading them here, the
+  general review in Step 3 can also check whether the code matches the spec.
+
+  This step is silent when no docs exist — it doesn't change anything for users
+  who skipped the SDD workflow.
+-->
+
+Check whether the following files exist: `docs/requirements.md`, `docs/design.md`, `docs/tasks.md`.
+
+- If **any** of them exist, read them and keep their contents in mind for the reviews that follow. Tell the user: "Found SDD planning docs — I'll also check that the code matches your requirements and design."
+- If **none** of them exist, skip this step silently and move on.
+
+---
+
+## Step 3: General Code Review
 
 Determine what to review:
 - If the user specified files or a directory, review those
@@ -65,6 +84,8 @@ Determine what to review:
 - If there is no git history, ask the user which files to review
 
 Apply the review criteria defined in [general-review-instructions.md](general-review-instructions.md).
+
+If SDD docs were loaded in Step 2, also apply the **Spec Compliance** section from the review instructions.
 
 Fix any issues you find directly in the files. After fixing, give a brief summary:
 - How many issues were found
@@ -77,7 +98,7 @@ Fix any issues you find directly in the files. After fixing, give a brief summar
 
 ---
 
-## Step 3: Security Review (Subagent)
+## Step 4: Security Review (Subagent)
 
 Launch the security review subagent using the Agent tool.
 
@@ -99,7 +120,7 @@ Once the subagent returns its findings, apply the suggested fixes. Summarize wha
 
 ---
 
-## Step 4: Final Summary
+## Step 5: Final Summary
 
 Provide a complete summary of the review:
 - What the general review found and fixed
