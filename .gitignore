@@ -1,0 +1,74 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+
+# Claude Code
+.claude/settings.local.json
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets.*
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories (common across languages)
+node_modules/
+vendor/
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.bundle/
+Pods/
+
+# Build output (common across languages)
+dist/
+build/
+out/
+target/
+bin/
+obj/
+*.class
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# Package manager locks (keep one per project, ignore the rest)
+# Uncomment whichever you don't use:
+# package-lock.json
+# yarn.lock
+# Gemfile.lock
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
