@@ -190,6 +190,35 @@ At any point, you can run `/explain <file>` to get a plain-English explanation o
 
 ---
 
+## Tips & Tricks
+
+This isn't a complete list — just a handful of features that you might find useful.
+
+### Prompt shortcuts
+
+- `! <command>` — run a shell command without leaving the chat (`! npm test`, `! git status`)
+- **Paste an image** — Claude can read screenshots and diagrams; paste one and ask about it
+
+### Slash commands
+
+- `/plan` — enter plan mode, where Claude outlines what it intends to do before making any changes; same as cycling to plan mode with Shift+Tab
+- `/btw` — ask a quick question without it entering the conversation history; the answer appears in a dismissible overlay and disappears after you close it. Claude can see the full session context but cannot read new files or run commands. Can be used while Claude is mid-task
+- `/simplify` — reviews your recently changed files for code reuse, quality, and efficiency issues, then fixes them; useful when generated code feels more complex than it needs to be
+- `/cost` — shows a summary of token usage for the current session
+- `/context` — shows a detailed breakdown of what's consuming your context window (system prompt, tools, messages, free space)
+- `/usage` — shows your plan usage limits and current rate-limit status
+- `/compact` — compresses a long conversation to free up context while keeping the important details
+- `/clear` — wipes the conversation entirely and starts fresh with zero context
+
+### Keyboard shortcuts
+
+- **Shift+Tab** — cycles through three modes: default mode (approve each action), accept edits mode (auto-accept file edits and filesystem commands like `mkdir`, `touch`, `rmd`, `rmdir` and `mv` inside your working directory), and plan mode (same as `/plan` — Claude outlines what it will do but takes no action)
+- **Ctrl+S** — stash your current prompt for later; press Ctrl+S again to restore it, or it reappears automatically after your next prompt
+- **Escape** — interrupt Claude mid-task when it's going in the wrong direction
+- **Escape Escape** — same as `/rewind`; undoes the last turn and reverts any file changes Claude made, or summarizes the conversation from a selected message
+
+---
+
 ## File Structure
 
 ```
