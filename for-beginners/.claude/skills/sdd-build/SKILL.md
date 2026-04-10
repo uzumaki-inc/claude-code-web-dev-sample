@@ -116,11 +116,12 @@ When all tasks are done, give the user:
 
 - A short list of the files you created or modified
 - One sentence on how to run the app (pull this from `CLAUDE.md`)
-- A nudge to run **/code-review** on the new code
 - A reminder that they can run **/explain <file>** on any file to understand it
 
-Example closing:
+IMPORTANT — always end your response by telling the user to run **/code-review**.
+This line must appear every time, even if the summary is short. Example closing:
 
 > "Done. I created `src/index.js` and `src/todo.js`. Run it with `node src/index.js`.
-> Next, try **/code-review** to check the code, or **/explain src/todo.js** if
-> you want a walkthrough of how it works."
+> You can run **/explain src/todo.js** if you want a walkthrough of how it works.
+>
+> When you're ready, run **/code-review** to check the code for issues."
