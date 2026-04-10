@@ -3,7 +3,8 @@
 This directory is a hands-on introduction to the four core building blocks of Claude Code:
 **slash commands**, **skills**, **hooks**, and **subagents**.
 
-Each one is demonstrated through a code review theme. Try them out, read the comments inside
+Each one is demonstrated through a code review theme, plus there's an optional planning
+workflow (SDD) that reuses the same skill pattern. Try them out, read the comments inside
 each file, and you'll have a solid mental model of how Claude Code works.
 
 ---
@@ -139,6 +140,50 @@ Here's how the four components work together:
 7. Both sets of fixes are applied. Review complete.
 ```
 
+## Optional: Plan Before You Build (SDD Workflow)
+
+**SDD** stands for **Spec-Driven Development** — the idea that you write a short
+specification (what you're building, why, and how) before writing any code. It doesn't
+have to be heavy or formal; even a few sentences per topic is enough to give both you
+and Claude a shared target to aim at.
+
+There are two extra skills that walk you through a lightweight version of SDD. They use
+the same skill building block you already learned in `/code-review`, applied to a
+different problem.
+
+### How it works
+
+1. Run `/sdd-init` — Claude asks you 5 short questions about the app you want to build.
+2. Claude generates four small planning docs from your answers:
+   - `CLAUDE.md` — project-level guidance for Claude
+   - `docs/requirements.md` — what you're building and why
+   - `docs/design.md` — technical design (stack, file layout, components)
+   - `docs/tasks.md` — an ordered implementation checklist
+3. (Optional) Edit any of the four docs by hand if you want to tweak the plan.
+4. Run `/sdd-build` — Claude reads the four docs and implements the app, task by task.
+5. Run `/code-review` on the generated code — the same skill you already know.
+
+### Why you might want this
+
+- **The questions help you clarify your own idea.** Beginners often start with a vague
+  sense of what they want. The five questions take about two minutes and force you to
+  articulate it — so both you and Claude have a clear target.
+- **You can review and edit the plan** before any code is written. If the design looks
+  wrong, fix `docs/design.md` — cheaper than rewriting code.
+- **Easier to start over if something goes wrong.** If the generated code isn't right,
+  you still have the docs. Delete the code, tweak a doc, re-run `/sdd-build` — instead
+  of explaining everything to Claude from scratch.
+- **The docs double as documentation** after the app is built. Useful if you come back
+  to the code a week later and forget how it works.
+
+### Why you might skip it
+
+If you just want to jump in and say "build me a tic-tac-toe game", that works too.
+The SDD skills are there when you want more control over what gets built — they're
+entirely optional.
+
+---
+
 ## If you get stuck
 
 At any point, you can run `/explain <file>` to get a plain-English explanation of any file.
@@ -155,9 +200,18 @@ for-beginners/
     ├── commands/
     │   └── explain.md                          ← /explain slash command
     ├── skills/
-    │   └── code-review/
-    │       ├── SKILL.md                        ← /code-review skill (main entry point)
-    │       └── general-review-instructions.md  ← supporting context for the skill
+    │   ├── code-review/
+    │   │   ├── SKILL.md                        ← /code-review skill (main entry point)
+    │   │   └── general-review-instructions.md  ← supporting context for the skill
+    │   ├── sdd-init/
+    │   │   ├── SKILL.md                        ← /sdd-init skill (questionnaire)
+    │   │   └── templates/                      ← doc templates used by /sdd-init
+    │   │       ├── CLAUDE.md.template
+    │   │       ├── requirements.md.template
+    │   │       ├── design.md.template
+    │   │       └── tasks.md.template
+    │   └── sdd-build/
+    │       └── SKILL.md                        ← /sdd-build skill (implementation)
     └── agents/
         └── security-reviewer.md               ← security review subagent
 ```
