@@ -1,0 +1,17 @@
+# 設計
+
+## 技術スタック
+
+{{TECH_STACK_WITH_REASONING}}
+
+## ファイル構成
+
+{{PROPOSED_FILE_LAYOUT}}
+
+## 主要コンポーネント
+
+{{KEY_COMPONENTS_AND_RESPONSIBILITIES}}
+
+## データモデル
+
+{{DATA_MODEL_OR_NONE}}

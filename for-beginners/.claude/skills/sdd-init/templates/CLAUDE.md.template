@@ -1,0 +1,24 @@
+# {{PROJECT_NAME}}
+
+{{ONE_PARAGRAPH_GOAL}}
+
+## Tech stack
+
+{{TECH_STACK}}
+
+## How to run
+
+{{HOW_TO_RUN}}
+
+## Things to keep in mind
+
+- Stick to the scope in `docs/requirements.md`. If the user asks for something
+  out of scope, mention it but don't silently expand the project.
+- Keep changes small and focused. Beginners are reading this code to learn.
+- {{ADDITIONAL_GOTCHAS}}
+
+## See also
+
+- [docs/requirements.md](docs/requirements.md) — what we're building and why
+- [docs/design.md](docs/design.md) — how it's built
+- [docs/tasks.md](docs/tasks.md) — implementation roadmap
